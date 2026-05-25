@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FMCG & Lojistik Dağıtım Optimizasyonu | Optade Sektörler</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* ── SEKTÖRLER HERO: 3 sektör kartı yan yana, renkli border'lar ── */
+    .sek-hero {
+      padding: 140px 0 72px;
+      background: linear-gradient(135deg, #0a0f1e 0%, #0d1117 40%, #0f1a0f 100%);
+      position: relative; overflow: hidden;
+    }
+    .sek-glow { position:absolute; top:0; left:50%; transform:translateX(-50%); width:800px; height:400px; background:radial-gradient(ellipse, rgba(74,158,202,0.06) 0%, transparent 65%); pointer-events:none; }
+    .sek-title { text-align:center; max-width:700px; margin:0 auto 56px; position:relative; z-index:1; }
+    .sek-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; position:relative; z-index:1; }
+    .sek-card { border-radius:14px; padding:28px; position:relative; overflow:hidden; cursor:pointer; transition:transform 0.2s; }
+    .sek-card:hover { transform:translateY(-4px); }
+    .sek-card.blue { background:linear-gradient(135deg,rgba(74,158,202,0.12),rgba(74,158,202,0.04)); border:1px solid rgba(74,158,202,0.25); }
+    .sek-card.green { background:linear-gradient(135deg,rgba(124,154,94,0.12),rgba(124,154,94,0.04)); border:1px solid rgba(124,154,94,0.25); }
+    .sek-card.mixed { background:linear-gradient(135deg,rgba(74,158,202,0.08),rgba(124,154,94,0.08)); border:1px solid rgba(163,191,126,0.2); }
+    .sek-card-icon { font-size:2.2rem; margin-bottom:14px; }
+    .sek-card h3 { margin-bottom:8px; font-size:1.1rem; }
+    .sek-card p { font-size:0.82rem; color:var(--text-muted); line-height:1.6; }
+    .sek-card-tag { position:absolute; top:16px; right:16px; font-size:0.65rem; font-weight:700; padding:3px 8px; border-radius:4px; }
+    .sek-card.blue .sek-card-tag { background:rgba(74,158,202,0.2); color:var(--accent-blue-light); }
+    .sek-card.green .sek-card-tag { background:rgba(124,154,94,0.2); color:var(--accent-green-light); }
+    .sek-card.mixed .sek-card-tag { background:rgba(163,191,126,0.15); color:var(--accent-green-light); }
+    @media(max-width:768px){.sek-cards{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><div class="logo-icon">⚡</div>Optade</a>
+    <ul class="nav-links">
+      <li><a href="rota-optimizasyonu.html">Rota Optimizasyonu</a></li>
+      <li><a href="surec-analizi.html">Süreç Analizi</a></li>
+      <li><a href="sektorler.html" class="active">Sektörler</a></li>
+      <li><a href="basari-hikayeleri.html">Başarı Hikayeleri</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="hakkimizda.html">Hakkımızda</a></li>
+    </ul>
+    <div class="nav-cta"><a href="iletisim.html" class="btn btn-primary btn-sm">Ücretsiz Demo</a></div>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-nav">
+  <a href="rota-optimizasyonu.html">Rota Optimizasyonu</a><a href="surec-analizi.html">Süreç Analizi</a>
+  <a href="sektorler.html">Sektörler</a><a href="basari-hikayeleri.html">Başarı Hikayeleri</a>
+  <a href="blog.html">Blog</a><a href="hakkimizda.html">Hakkımızda</a>
+  <a href="iletisim.html" class="btn btn-primary" style="margin-top:8px;">Ücretsiz Demo</a>
+</div>
+
+<section class="sek-hero">
+  <div class="sek-glow"></div>
+  <div class="container">
+    <div class="sek-title">
+      <div class="breadcrumb" style="justify-content:center;"><a href="../index.html">Ana Sayfa</a> / <span>Sektörler</span></div>
+      <div class="section-label" style="margin-top:12px;">Sektörel Çözümler</div>
+      <h1 style="margin:16px 0;">Her Sektörün Dinamiklerine <span style="background:var(--gradient-mixed);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Özel Optimizasyon</span></h1>
+      <p style="max-width:560px;margin:0 auto;">Lojistikten FMCG'ye, perakendeden gıdaya kadar gerçek saha verilerine dayalı projeler yürütüyoruz.</p>
+    </div>
+    <div class="sek-cards">
+      <div class="sek-card blue">
+        <div class="sek-card-tag">Aktif</div>
+        <div class="sek-card-icon">🚚</div>
+        <h3>Lojistik & Kargo</h3>
+        <p>Kurye rotalama, gecoding altyapısı, lojistik yönetim paneli ve mobil sürücü uygulamaları.</p>
+      </div>
+      <div class="sek-card green">
+        <div class="sek-card-tag">Aktif</div>
+        <div class="sek-card-icon">🏪</div>
+        <h3>FMCG & Dağıtım</h3>
+        <p>Dağıtım rotalama, fiyat & rakip analizi, dağıtıcı mobil uygulaması ve saha yönetim paneli.</p>
+      </div>
+      <div class="sek-card mixed">
+        <div class="sek-card-tag">Aktif</div>
+        <div class="sek-card-icon">🛒</div>
+        <h3>Perakende & Gıda</h3>
+        <p>Şube yeri analizi, müşteri trafik takibi, dinamik fiyatlama ve soğuk zincir optimizasyonu.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DETAIL SECTIONS -->
+<section class="section">
+  <div class="container">
+    <!-- Lojistik -->
+    <div class="split-section" style="margin-bottom:80px;padding-bottom:80px;border-bottom:1px solid var(--border);">
+      <div>
+        <div class="tag" style="margin-bottom:16px;">Lojistik & Kargo</div>
+        <h2 style="margin-bottom:16px;">Kargo Operasyonları İçin Uçtan Uca Optimizasyon</h2>
+        <p style="margin-bottom:20px;">B2 Cargo ve CargoX ile kanıtlanmış rota optimizasyonu, mobil uygulama ve yapay zeka çözümleri.</p>
+        <div class="feature-list">
+          <div class="feature-item"><div class="feature-icon">✓</div><p>Şube bazlı kurye rotalama</p></div>
+          <div class="feature-item"><div class="feature-icon">✓</div><p>Geocoding altyapısı ve adres doğrulama</p></div>
+          <div class="feature-item"><div class="feature-icon">✓</div><p>Kameradan desi hesaplama</p></div>
+          <div class="feature-item"><div class="feature-icon">✓</div><p>Yapay zeka destekli belge okuma</p></div>
+          <div class="feature-item"><div class="feature-icon">✓</div><p>Mobil kurye uygulaması</p></div>
+        </div>
+        <a href="iletisim.html" class="btn btn-primary" style="margin-top:28px;">Kargo Çözümleri →</a>
+      </div>
+      <div class="highlight-box" style="text-align:center;">
+        <div style="font-size:3rem;margin-bottom:16px;">🚚</div>
+        <h3 style="margin-bottom:8px;">B2 Cargo & CargoX</h3>
+        <p style="font-size:0.85rem;margin-bottom:24px;">İki büyük kargo firmasıyla sahada kanıtlanmış çözümler.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <div style="background:var(--bg-secondary);border-radius:8px;padding:16px;"><div style="font-size:1.6rem;font-weight:800;color:var(--accent-blue-light)">%25</div><div style="font-size:0.72rem;color:var(--text-muted);margin-top:4px;">Maliyet Azalması</div></div>
+          <div style="background:var(--bg-secondary);border-radius:8px;padding:16px;"><div style="font-size:1.6rem;font-weight:800;color:var(--accent-blue-light)">115</div><div style="font-size:0.72rem;color:var(--text-muted);margin-top:4px;">Aktif Şube</div></div>
+        </div>
+      </div>
+    </div>
+    <!-- FMCG -->
+    <div class="split-section reverse" style="margin-bottom:80px;padding-bottom:80px;border-bottom:1px solid var(--border);">
+      <div>
+        <div class="tag green" style="margin-bottom:16px;">FMCG & Dağıtım</div>
+        <h2 style="margin-bottom:16px;">FMCG Dağıtım Optimizasyonu ile Saha Verimliliğini Artırın</h2>
+        <p style="margin-bottom:20px;">Başgimpa ile geliştirilen modeller, FMCG operasyonları için özel tasarlandı.</p>
+        <div class="feature-list">
+          <div class="feature-item"><div class="feature-icon green">✓</div><p>Dağıtım rotalama optimizasyonu</p></div>
+          <div class="feature-item"><div class="feature-icon green">✓</div><p>Fiyat ve rakip analizi modülü</p></div>
+          <div class="feature-item"><div class="feature-icon green">✓</div><p>Dağıtıcı mobil uygulaması</p></div>
+          <div class="feature-item"><div class="feature-icon green">✓</div><p>Mağaza içi davranış analizi</p></div>
+        </div>
+        <a href="iletisim.html" class="btn btn-green" style="margin-top:28px;">FMCG Çözümleri →</a>
+      </div>
+      <div class="highlight-box green" style="text-align:center;">
+        <div style="font-size:3rem;margin-bottom:16px;">🏪</div>
+        <h3 style="margin-bottom:8px;">Başgimpa</h3>
+        <p style="font-size:0.85rem;margin-bottom:24px;">FMCG distribütöründe sahada ölçülen sonuçlar.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <div style="background:var(--bg-secondary);border-radius:8px;padding:16px;"><div style="font-size:1.6rem;font-weight:800;color:var(--accent-green-light)">%30</div><div style="font-size:0.72rem;color:var(--text-muted);margin-top:4px;">Saha Verimliliği</div></div>
+          <div style="background:var(--bg-secondary);border-radius:8px;padding:16px;"><div style="font-size:1.6rem;font-weight:800;color:var(--accent-green-light)">5+</div><div style="font-size:0.72rem;color:var(--text-muted);margin-top:4px;">Aktif Proje</div></div>
+        </div>
+      </div>
+    </div>
+    <!-- Perakende -->
+    <div class="split-section">
+      <div>
+        <div class="tag" style="margin-bottom:16px;">Perakende & Gıda</div>
+        <h2 style="margin-bottom:16px;">Perakende Operasyonlarında Yapay Zeka Destekli Kararlar</h2>
+        <p style="margin-bottom:20px;">Şube yeri analizi, dinamik fiyatlama ve soğuk zincir optimizasyonu çözümleri.</p>
+        <div class="feature-list">
+          <div class="feature-item"><div class="feature-icon">✓</div><p>Yeni şube yeri önerisi ve lokasyon analizi</p></div>
+          <div class="feature-item"><div class="feature-icon">✓</div><p>Müşteri trafik ve yoğunluk analizi</p></div>
+          <div class="feature-item"><div class="feature-icon">✓</div><p>Dinamik fiyatlama modeli</p></div>
+          <div class="feature-item"><div class="feature-icon">✓</div><p>Soğuk zincir lojistik optimizasyonu</p></div>
+        </div>
+        <a href="iletisim.html" class="btn btn-primary" style="margin-top:28px;">Perakende Çözümleri →</a>
+      </div>
+      <div class="highlight-box" style="display:flex;flex-direction:column;gap:12px;">
+        <h3 style="margin-bottom:8px;">Perakende Optimizasyon Kapsamı</h3>
+        <div class="feature-list">
+          <div class="feature-item"><div class="feature-icon">✓</div><p>Mağaza içi müşteri davranış analizi</p></div>
+          <div class="feature-item"><div class="feature-icon">✓</div><p>Raf yerleşim optimizasyonu</p></div>
+          <div class="feature-item"><div class="feature-icon">✓</div><p>Rakip fiyat takip sistemi</p></div>
+          <div class="feature-item"><div class="feature-icon">✓</div><p>Lokasyon bazlı talep tahmini</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:linear-gradient(135deg,#0a0f1e,#0d1117,#0f1a0f);border-top:1px solid rgba(74,158,202,0.12);text-align:center;padding:80px 0;">
+  <div class="container">
+    <div class="section-label">Sektörünüz İçin</div>
+    <h2 style="margin-bottom:12px;">Kendi Sektörünüze Özel Çözümü Konuşalım</h2>
+    <p style="max-width:460px;margin:0 auto 36px;">Size özel bir çözüm yol haritası hazırlayalım.</p>
+    <a href="iletisim.html" class="btn btn-primary btn-lg">Ücretsiz Demo Talebi</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="../index.html" class="nav-logo" style="font-size:1.3rem;"><div class="logo-icon">⚡</div>Optade</a><p>Operasyonel süreçler için yapay zeka, optimizasyon ve yazılım çözümleri.</p><div class="footer-social"><a href="#" class="social-icon">in</a><a href="#" class="social-icon">ig</a></div></div>
+      <div class="footer-col"><h4>Çözümler</h4><ul><li><a href="rota-optimizasyonu.html">Rota Optimizasyonu</a></li><li><a href="surec-analizi.html">Süreç Analizi</a></li></ul></div>
+      <div class="footer-col"><h4>Şirket</h4><ul><li><a href="hakkimizda.html">Hakkımızda</a></li><li><a href="basari-hikayeleri.html">Başarı Hikayeleri</a></li></ul></div>
+      <div class="footer-col"><h4>İletişim</h4><ul><li><a href="iletisim.html">Demo Talebi</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 Optade Teknoloji A.Ş.</span><span>Yıldız Teknopark, İstanbul</span></div>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

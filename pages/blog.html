@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lojistik Optimizasyon Blog | Optade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* ── BLOG HERO: Yatay featured makale kartı ── */
+    .blog-hero {
+      padding: 140px 0 56px;
+      background: linear-gradient(145deg, #0d1117 0%, #111827 100%);
+      position: relative; overflow: hidden;
+    }
+    .blog-glow { position:absolute; top:20%; right:5%; width:400px; height:400px; background:radial-gradient(circle,rgba(74,158,202,0.07) 0%,transparent 65%); pointer-events:none; }
+    .blog-hero-inner { display:grid; grid-template-columns:1fr 1.2fr; gap:48px; align-items:center; position:relative; z-index:1; }
+    .featured-card { background:rgba(255,255,255,0.03); border:1px solid rgba(74,158,202,0.2); border-radius:16px; overflow:hidden; }
+    .fc-img { height:160px; background:linear-gradient(135deg,#0a1628,#1a3a5c); display:flex; align-items:center; justify-content:center; font-size:3.5rem; border-bottom:1px solid rgba(74,158,202,0.15); }
+    .fc-body { padding:24px; }
+    .fc-tags { display:flex; gap:8px; margin-bottom:12px; }
+    .fc-title { font-size:1rem; font-weight:700; color:var(--text-primary); margin-bottom:8px; line-height:1.4; }
+    .fc-meta { font-size:0.75rem; color:var(--text-muted); display:flex; gap:12px; }
+    @media(max-width:768px){.blog-hero-inner{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><div class="logo-icon">⚡</div>Optade</a>
+    <ul class="nav-links">
+      <li><a href="rota-optimizasyonu.html">Rota Optimizasyonu</a></li>
+      <li><a href="surec-analizi.html">Süreç Analizi</a></li>
+      <li><a href="sektorler.html">Sektörler</a></li>
+      <li><a href="basari-hikayeleri.html">Başarı Hikayeleri</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="hakkimizda.html">Hakkımızda</a></li>
+    </ul>
+    <div class="nav-cta"><a href="iletisim.html" class="btn btn-primary btn-sm">Ücretsiz Demo</a></div>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-nav">
+  <a href="rota-optimizasyonu.html">Rota Optimizasyonu</a><a href="surec-analizi.html">Süreç Analizi</a>
+  <a href="sektorler.html">Sektörler</a><a href="basari-hikayeleri.html">Başarı Hikayeleri</a>
+  <a href="blog.html">Blog</a><a href="hakkimizda.html">Hakkımızda</a>
+  <a href="iletisim.html" class="btn btn-primary" style="margin-top:8px;">Ücretsiz Demo</a>
+</div>
+
+<section class="blog-hero">
+  <div class="blog-glow"></div>
+  <div class="container">
+    <div class="blog-hero-inner">
+      <div>
+        <div class="breadcrumb"><a href="../index.html">Ana Sayfa</a> / <span>Blog</span></div>
+        <div class="section-label" style="margin-top:12px;">Blog & Kaynaklar</div>
+        <h1 style="margin:16px 0 16px;font-size:clamp(1.8rem,3.5vw,2.8rem);">Lojistik Optimizasyon Dünyasından <span style="color:var(--accent-blue-light)">İçgörüler</span></h1>
+        <p style="max-width:440px;">Rota optimizasyonu, yapay zeka ve operasyon yönetimi konularında derinlemesine rehberler ve sektör analizleri.</p>
+      </div>
+      <div class="featured-card">
+        <div class="fc-img">🗺️</div>
+        <div class="fc-body">
+          <div class="fc-tags"><span class="tag">Öne Çıkan</span><span class="tag green">Rota Optimizasyonu</span></div>
+          <div class="fc-title">Kargo Firmaları İçin Rota Optimizasyonu: %25 Maliyet Düşürmenin Yolu</div>
+          <div class="fc-meta"><span>Optade Ekibi</span><span>•</span><span>15 Mayıs 2025</span><span>•</span><span>8 dk</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG GRID -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Tüm Yazılar</div>
+      <h2 class="section-title">Son İçerikler</h2>
+    </div>
+    <div class="grid-3">
+      <div class="card" style="display:flex;flex-direction:column;">
+        <div style="background:linear-gradient(135deg,#0a1628,#1a2535);border-radius:8px;height:120px;display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin-bottom:20px;">🚚</div>
+        <span class="tag green" style="align-self:flex-start;margin-bottom:10px;">Kurye Yönetimi</span>
+        <h3 style="font-size:1rem;margin-bottom:8px;">Kurye Rotalama Optimizasyonu: Şube Bazlı Yaklaşımın Avantajları</h3>
+        <p style="font-size:0.83rem;flex:1;">Şube bazlı kurye dağılımında yaşanan verimsizlikler ve optimizasyonla nasıl giderilebileceğini açıklıyoruz.</p>
+        <div style="display:flex;justify-content:space-between;font-size:0.75rem;color:var(--text-muted);margin-top:16px;"><span>8 Mayıs 2025</span><span>6 dk okuma</span></div>
+      </div>
+      <div class="card" style="display:flex;flex-direction:column;">
+        <div style="background:linear-gradient(135deg,#0f1a0f,#1a2e1a);border-radius:8px;height:120px;display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin-bottom:20px;">📊</div>
+        <span class="tag" style="align-self:flex-start;margin-bottom:10px;">FMCG Dağıtım</span>
+        <h3 style="font-size:1rem;margin-bottom:8px;">FMCG Dağıtımında Operasyonel Maliyet Nasıl Düşürülür?</h3>
+        <p style="font-size:0.83rem;flex:1;">Hızlı tüketim malları distribütörlerinin en sık karşılaştığı 5 operasyonel sorun ve çözüm yolları.</p>
+        <div style="display:flex;justify-content:space-between;font-size:0.75rem;color:var(--text-muted);margin-top:16px;"><span>1 Mayıs 2025</span><span>7 dk okuma</span></div>
+      </div>
+      <div class="card" style="display:flex;flex-direction:column;">
+        <div style="background:linear-gradient(135deg,#0a1628,#1a3a5c);border-radius:8px;height:120px;display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin-bottom:20px;">🤖</div>
+        <span class="tag" style="align-self:flex-start;margin-bottom:10px;">Yapay Zeka</span>
+        <h3 style="font-size:1rem;margin-bottom:8px;">Lojistikte Yapay Zeka: Teoriden Sahaya Gerçek Uygulamalar</h3>
+        <p style="font-size:0.83rem;flex:1;">Yapay zekanın lojistik operasyonlarda nasıl gerçek değer yarattığını saha örnekleriyle anlatıyoruz.</p>
+        <div style="display:flex;justify-content:space-between;font-size:0.75rem;color:var(--text-muted);margin-top:16px;"><span>22 Nisan 2025</span><span>9 dk okuma</span></div>
+      </div>
+      <div class="card" style="display:flex;flex-direction:column;">
+        <div style="background:linear-gradient(135deg,#1a1a0a,#2e2e1a);border-radius:8px;height:120px;display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin-bottom:20px;">📍</div>
+        <span class="tag green" style="align-self:flex-start;margin-bottom:10px;">Perakende</span>
+        <h3 style="font-size:1rem;margin-bottom:8px;">Yeni Şube Açarken Veri Analizi Neden Kritik?</h3>
+        <p style="font-size:0.83rem;flex:1;">Lokasyon kararlarını sezgiye değil veriye dayandırmanın işletmenize kattığı avantajlar.</p>
+        <div style="display:flex;justify-content:space-between;font-size:0.75rem;color:var(--text-muted);margin-top:16px;"><span>15 Nisan 2025</span><span>5 dk okuma</span></div>
+      </div>
+      <div class="card" style="display:flex;flex-direction:column;">
+        <div style="background:linear-gradient(135deg,#0a1628,#1a2535);border-radius:8px;height:120px;display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin-bottom:20px;">👁️</div>
+        <span class="tag" style="align-self:flex-start;margin-bottom:10px;">Bilgisayarlı Görü</span>
+        <h3 style="font-size:1rem;margin-bottom:8px;">Kameradan Desi Hesaplama: Kargo Operasyonlarını Nasıl Dönüştürür?</h3>
+        <p style="font-size:0.83rem;flex:1;">Bilgisayarlı görü ile hacim ölçümünün kargo sektöründe yarattığı dönüşüm.</p>
+        <div style="display:flex;justify-content:space-between;font-size:0.75rem;color:var(--text-muted);margin-top:16px;"><span>7 Nisan 2025</span><span>6 dk okuma</span></div>
+      </div>
+      <div class="card" style="display:flex;flex-direction:column;">
+        <div style="background:linear-gradient(135deg,#0f1a0f,#1a2e1a);border-radius:8px;height:120px;display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin-bottom:20px;">💰</div>
+        <span class="tag green" style="align-self:flex-start;margin-bottom:10px;">Fiyatlama</span>
+        <h3 style="font-size:1rem;margin-bottom:8px;">Dinamik Fiyatlama ile Kârlılığı Nasıl Artırırsınız?</h3>
+        <p style="font-size:0.83rem;flex:1;">Talep, rekabet ve bölgesel verilere dayalı dinamik fiyatlama modellerinin katkısı.</p>
+        <div style="display:flex;justify-content:space-between;font-size:0.75rem;color:var(--text-muted);margin-top:16px;"><span>1 Nisan 2025</span><span>7 dk okuma</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="section" style="background:var(--bg-secondary);">
+  <div class="container">
+    <div style="max-width:520px;margin:0 auto;text-align:center;">
+      <div class="section-label">Bülten</div>
+      <h2 style="margin-bottom:12px;">İçerikleri Kaçırmayın</h2>
+      <p style="margin-bottom:28px;">Haftada bir, sektörden önemli içgörüler ve pratik rehberler.</p>
+      <form style="display:flex;gap:10px;flex-wrap:wrap;" onsubmit="return false;">
+        <input type="email" class="form-control" placeholder="E-posta adresiniz" style="flex:1;min-width:200px;">
+        <button type="submit" class="btn btn-primary">Abone Ol</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="../index.html" class="nav-logo" style="font-size:1.3rem;"><div class="logo-icon">⚡</div>Optade</a><p>Operasyonel süreçler için yapay zeka, optimizasyon ve yazılım çözümleri.</p><div class="footer-social"><a href="#" class="social-icon">in</a><a href="#" class="social-icon">ig</a></div></div>
+      <div class="footer-col"><h4>Çözümler</h4><ul><li><a href="rota-optimizasyonu.html">Rota Optimizasyonu</a></li><li><a href="surec-analizi.html">Süreç Analizi</a></li></ul></div>
+      <div class="footer-col"><h4>Şirket</h4><ul><li><a href="hakkimizda.html">Hakkımızda</a></li><li><a href="basari-hikayeleri.html">Başarı Hikayeleri</a></li></ul></div>
+      <div class="footer-col"><h4>İletişim</h4><ul><li><a href="iletisim.html">Demo Talebi</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 Optade Teknoloji A.Ş.</span><span>Yıldız Teknopark, İstanbul</span></div>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

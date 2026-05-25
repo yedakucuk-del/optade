@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lojistik Süreç Optimizasyonu | Optade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* ── SÜREÇ ANALİZİ HERO: Tam genişlik — büyük başlık + sağda adım kartları ── */
+    .sa-hero {
+      padding: 140px 0 80px;
+      background: linear-gradient(160deg, #0d1117 0%, #0f1b15 50%, #0a1020 100%);
+      position: relative; overflow: hidden;
+    }
+    .sa-glow { position:absolute; top:-80px; left:-80px; width:500px; height:500px; background:radial-gradient(circle,rgba(124,154,94,0.1) 0%,transparent 65%); pointer-events:none; }
+    .sa-glow2 { position:absolute; bottom:-60px; right:-40px; width:400px; height:400px; background:radial-gradient(circle,rgba(74,158,202,0.08) 0%,transparent 65%); pointer-events:none; }
+    .sa-inner { display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:center; position:relative; z-index:1; }
+    .sa-steps { display:flex; flex-direction:column; gap:10px; }
+    .sa-step { display:flex; align-items:center; gap:14px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); border-radius:10px; padding:14px 18px; transition:all 0.2s; }
+    .sa-step:hover { border-color:rgba(124,154,94,0.3); background:rgba(124,154,94,0.05); }
+    .sa-step-num { width:32px; height:32px; border-radius:50%; background:var(--gradient-green); display:flex; align-items:center; justify-content:center; font-size:0.8rem; font-weight:800; color:white; flex-shrink:0; }
+    .sa-step-num.blue { background:var(--gradient-blue); }
+    .sa-step-text { font-size:0.85rem; font-weight:600; color:var(--text-primary); }
+    .sa-step-sub { font-size:0.72rem; color:var(--text-muted); margin-top:2px; }
+    @media(max-width:768px){.sa-inner{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><div class="logo-icon">⚡</div>Optade</a>
+    <ul class="nav-links">
+      <li><a href="rota-optimizasyonu.html">Rota Optimizasyonu</a></li>
+      <li><a href="surec-analizi.html" class="active">Süreç Analizi</a></li>
+      <li><a href="sektorler.html">Sektörler</a></li>
+      <li><a href="basari-hikayeleri.html">Başarı Hikayeleri</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="hakkimizda.html">Hakkımızda</a></li>
+    </ul>
+    <div class="nav-cta"><a href="iletisim.html" class="btn btn-primary btn-sm">Ücretsiz Demo</a></div>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-nav">
+  <a href="rota-optimizasyonu.html">Rota Optimizasyonu</a><a href="surec-analizi.html">Süreç Analizi</a>
+  <a href="sektorler.html">Sektörler</a><a href="basari-hikayeleri.html">Başarı Hikayeleri</a>
+  <a href="blog.html">Blog</a><a href="hakkimizda.html">Hakkımızda</a>
+  <a href="iletisim.html" class="btn btn-primary" style="margin-top:8px;">Ücretsiz Demo</a>
+</div>
+
+<section class="sa-hero">
+  <div class="sa-glow"></div><div class="sa-glow2"></div>
+  <div class="container">
+    <div class="sa-inner">
+      <div>
+        <div class="breadcrumb"><a href="../index.html">Ana Sayfa</a> / <span>Süreç Analizi</span></div>
+        <div class="section-label green" style="margin-top:8px;">Lojistik Süreç Optimizasyonu</div>
+        <h1 style="margin:16px 0;font-size:clamp(2rem,4vw,3.2rem);">Operasyonunuzun <span style="color:var(--accent-green-light)">Gizli Kayıplarını</span> Buluyoruz</h1>
+        <p style="max-width:480px;margin-bottom:32px;">Operasyonel verilerinizi derinlemesine analiz ederek darboğazları tespit ediyor, ölçülebilir iyileştirme modelleri tasarlıyoruz. Her çözüm sahada doğrulanır.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="iletisim.html" class="btn btn-green btn-lg">Ücretsiz Analiz Talebi</a>
+          <a href="hakkimizda.html" class="btn btn-secondary btn-lg">Metodolojimiz</a>
+        </div>
+      </div>
+      <div class="sa-steps">
+        <div class="sa-step"><div class="sa-step-num">1</div><div><div class="sa-step-text">Süreç Analizi</div><div class="sa-step-sub">Mevcut operasyonun incelenmesi</div></div></div>
+        <div class="sa-step"><div class="sa-step-num blue">2</div><div><div class="sa-step-text">Problem Tespiti</div><div class="sa-step-sub">Darboğaz ve iyileştirme alanları</div></div></div>
+        <div class="sa-step"><div class="sa-step-num">3</div><div><div class="sa-step-text">Model Geliştirme</div><div class="sa-step-sub">Algoritma ve optimizasyon tasarımı</div></div></div>
+        <div class="sa-step"><div class="sa-step-num blue">4</div><div><div class="sa-step-text">Yazılım Arayüzü</div><div class="sa-step-sub">Kullanıcı dostu arayüz tasarımı</div></div></div>
+        <div class="sa-step"><div class="sa-step-num">5</div><div><div class="sa-step-text">Pilot & Test</div><div class="sa-step-sub">Saha verileriyle doğrulama</div></div></div>
+        <div class="sa-step"><div class="sa-step-num blue">6</div><div><div class="sa-step-text">Yaygınlaştırma</div><div class="sa-step-sub">Sürekli iyileştirme ve destek</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section">
+  <div class="container">
+    <div class="section-header text-center">
+      <div class="section-label">Hizmet Alanları</div>
+      <h2 class="section-title">Lojistik Süreç İyileştirme Kapsamı</h2>
+    </div>
+    <div class="grid-3">
+      <div class="card green-hover"><div class="card-icon green">🏭</div><h3>Depo & Stok Optimizasyonu</h3><p>Depo içi hareket planlaması, raf düzeni ve stok yönetimi süreçlerinin iyileştirilmesi.</p></div>
+      <div class="card"><div class="card-icon">🚚</div><h3>Dağıtım Süreci İyileştirme</h3><p>Dağıtım ağı analizi, aktarma noktası optimizasyonu ve sevkiyat süreçlerinin yeniden tasarımı.</p></div>
+      <div class="card green-hover"><div class="card-icon green">📍</div><h3>Yeni Şube Yeri Önerisi</h3><p>Nüfus, rekabet, müşteri yoğunluğu verileriyle en doğru şube yatırım noktalarını belirliyoruz.</p></div>
+      <div class="card"><div class="card-icon">💰</div><h3>Dinamik Fiyatlama</h3><p>Rakip fiyatları ve bölgesel verilere göre yapay zeka destekli fiyatlama modelleri.</p></div>
+      <div class="card green-hover"><div class="card-icon green">📦</div><h3>Palet Takip Sistemi</h3><p>Depo ve sevkiyatta paletlerin konum, hareket ve operasyon durumlarının anlık izlenmesi.</p></div>
+      <div class="card"><div class="card-icon">👁️</div><h3>Mekan & Müşteri Analizi</h3><p>Kamera görüntüleriyle müşteri hareketleri, yoğunluk ve mağaza içi davranış analizi.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="background:var(--bg-secondary);">
+  <div class="container">
+    <div class="section-header text-center">
+      <div class="section-label green">SSS</div>
+      <h2 class="section-title">Süreç Analizi Hakkında Merak Edilenler</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><button class="faq-question">Süreç analizi ne kadar sürer? <span class="faq-arrow">▼</span></button><div class="faq-answer"><div class="faq-answer-inner">Projenin kapsamına göre başlangıç analiz çalışması genellikle 2-4 hafta sürmektedir. Bu süreçte saha ziyaretleri, veri toplama ve ilk bulgular raporlanır.</div></div></div>
+      <div class="faq-item"><button class="faq-question">Hangi verileri paylaşmamız gerekiyor? <span class="faq-arrow">▼</span></button><div class="faq-answer"><div class="faq-answer-inner">Mevcut operasyonunuza ait sipariş verileri, araç filosu bilgileri ve saha iş akışları yeterlidir. Tüm veriler gizlilik anlaşması kapsamında korunur.</div></div></div>
+      <div class="faq-item"><button class="faq-question">Mevcut sistemlerimizle entegre olabilir mi? <span class="faq-arrow">▼</span></button><div class="faq-answer"><div class="faq-answer-inner">Evet. ERP, TMS ve diğer kurumsal sistemlerle API üzerinden entegrasyon sağlıyoruz.</div></div></div>
+      <div class="faq-item"><button class="faq-question">Sonuçlar ne zaman görülür? <span class="faq-arrow">▼</span></button><div class="faq-answer"><div class="faq-answer-inner">Pilot çalışma aşamasından itibaren genellikle 4-8 hafta içinde ölçülebilir sonuçlar alınmaya başlanır.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:linear-gradient(160deg,#0d1117,#0f1b15,#0d1117);border-top:1px solid rgba(124,154,94,0.15);text-align:center;padding:80px 0;">
+  <div class="container">
+    <div class="section-label green">Başlayalım</div>
+    <h2 style="margin-bottom:12px;">Operasyonunuzun Potansiyelini Keşfedin</h2>
+    <p style="max-width:460px;margin:0 auto 36px;">Ücretsiz ön analiz görüşmesiyle iyileştirme fırsatlarını birlikte değerlendirelim.</p>
+    <a href="iletisim.html" class="btn btn-green btn-lg">Ücretsiz Görüşme Talep Et</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="../index.html" class="nav-logo" style="font-size:1.3rem;"><div class="logo-icon">⚡</div>Optade</a><p>Operasyonel süreçler için yapay zeka, optimizasyon ve yazılım çözümleri.</p><div class="footer-social"><a href="#" class="social-icon">in</a><a href="#" class="social-icon">ig</a></div></div>
+      <div class="footer-col"><h4>Çözümler</h4><ul><li><a href="rota-optimizasyonu.html">Rota Optimizasyonu</a></li><li><a href="surec-analizi.html">Süreç Analizi</a></li></ul></div>
+      <div class="footer-col"><h4>Şirket</h4><ul><li><a href="hakkimizda.html">Hakkımızda</a></li><li><a href="basari-hikayeleri.html">Başarı Hikayeleri</a></li></ul></div>
+      <div class="footer-col"><h4>İletişim</h4><ul><li><a href="iletisim.html">Demo Talebi</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 Optade Teknoloji A.Ş.</span><span>Yıldız Teknopark, İstanbul</span></div>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

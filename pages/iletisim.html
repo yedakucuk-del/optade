@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lojistik Optimizasyon Demo | Optade İletişim</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* ── İLETİŞİM HERO: Form ve info yan yana, mavi-yeşil gradient şerit ── */
+    .il-hero {
+      padding: 120px 0 0;
+      background: #0d1117;
+      position: relative; overflow: hidden;
+    }
+    .il-stripe {
+      position: absolute; top:0; left:0; right:0; height:4px;
+      background: var(--gradient-mixed);
+    }
+    .il-inner { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:flex-start; }
+    .il-left { padding-bottom: 64px; }
+    .il-right { background:rgba(255,255,255,0.02); border-top:1px solid rgba(74,158,202,0.2); border-left:1px solid rgba(74,158,202,0.1); padding:48px; min-height:100%; }
+    .info-card { background:var(--bg-card); border:1px solid var(--border); border-radius:10px; padding:20px; margin-bottom:16px; display:flex; align-items:center; gap:16px; }
+    .info-icon { width:44px; height:44px; background:rgba(74,158,202,0.1); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0; }
+    .process-list { display:flex; flex-direction:column; gap:12px; margin-top:24px; }
+    .process-item { display:flex; align-items:center; gap:14px; }
+    .pnum { width:28px; height:28px; border-radius:50%; background:var(--gradient-mixed); display:flex; align-items:center; justify-content:center; font-size:0.72rem; font-weight:800; color:white; flex-shrink:0; }
+    @media(max-width:768px){.il-inner{grid-template-columns:1fr;} .il-right{border-left:none;border-top:1px solid var(--border);}}
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><div class="logo-icon">⚡</div>Optade</a>
+    <ul class="nav-links">
+      <li><a href="rota-optimizasyonu.html">Rota Optimizasyonu</a></li>
+      <li><a href="surec-analizi.html">Süreç Analizi</a></li>
+      <li><a href="sektorler.html">Sektörler</a></li>
+      <li><a href="basari-hikayeleri.html">Başarı Hikayeleri</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="hakkimizda.html">Hakkımızda</a></li>
+    </ul>
+    <div class="nav-cta"><a href="iletisim.html" class="btn btn-primary btn-sm">Ücretsiz Demo</a></div>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-nav">
+  <a href="rota-optimizasyonu.html">Rota Optimizasyonu</a><a href="surec-analizi.html">Süreç Analizi</a>
+  <a href="sektorler.html">Sektörler</a><a href="basari-hikayeleri.html">Başarı Hikayeleri</a>
+  <a href="blog.html">Blog</a><a href="hakkimizda.html">Hakkımızda</a>
+  <a href="iletisim.html" class="btn btn-primary" style="margin-top:8px;">Ücretsiz Demo</a>
+</div>
+
+<section class="il-hero">
+  <div class="il-stripe"></div>
+  <div class="container">
+    <div class="il-inner">
+      <div class="il-left">
+        <div class="breadcrumb" style="margin-bottom:16px;"><a href="../index.html">Ana Sayfa</a> / <span>Demo & İletişim</span></div>
+        <div class="section-label" style="margin-bottom:16px;">Demo & İletişim</div>
+        <h1 style="font-size:clamp(1.8rem,3.5vw,2.8rem);margin-bottom:12px;">Operasyonlarınızı <span style="color:var(--accent-blue-light)">Optimize</span> Edelim</h1>
+        <p style="margin-bottom:32px;">Formu doldurun, 24 saat içinde ekibimiz sizi arar.</p>
+        <form onsubmit="handleSubmit(event)">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+            <div class="form-group"><label>Ad Soyad *</label><input type="text" class="form-control" placeholder="Adınız Soyadınız" required></div>
+            <div class="form-group"><label>E-posta *</label><input type="email" class="form-control" placeholder="sirket@email.com" required></div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+            <div class="form-group"><label>Şirket Adı *</label><input type="text" class="form-control" placeholder="Şirket Adı" required></div>
+            <div class="form-group"><label>Telefon</label><input type="tel" class="form-control" placeholder="+90 5XX XXX XX XX"></div>
+          </div>
+          <div class="form-group"><label>Sektör</label>
+            <select class="form-control"><option value="">Sektörünüzü seçin</option><option>Lojistik & Kargo</option><option>FMCG & Dağıtım</option><option>Perakende</option><option>Gıda & Soğuk Zincir</option><option>Diğer</option></select>
+          </div>
+          <div class="form-group"><label>İlgilendiğiniz Çözüm</label>
+            <select class="form-control"><option value="">Çözüm seçin</option><option>Rota Optimizasyonu</option><option>Kurye Rotalama</option><option>Süreç Analizi</option><option>Lojistik Yönetim Paneli</option><option>Bilgisayarlı Görü</option><option>Dinamik Fiyatlama</option><option>Genel Değerlendirme</option></select>
+          </div>
+          <div class="form-group"><label>Operasyonunuz Hakkında</label><textarea class="form-control" rows="3" placeholder="Günlük teslimat sayısı, araç filosu veya temel sorunlarınızı kısaca açıklayın..."></textarea></div>
+          <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">Demo Talebi Gönder →</button>
+          <p style="font-size:0.75rem;color:var(--text-muted);margin-top:10px;text-align:center;">Bilgileriniz gizli tutulur ve üçüncü taraflarla paylaşılmaz.</p>
+        </form>
+      </div>
+      <div class="il-right">
+        <h3 style="margin-bottom:24px;">İletişim Bilgileri</h3>
+        <div class="info-card">
+          <div class="info-icon">📧</div>
+          <div><div style="font-size:0.8rem;color:var(--text-muted);margin-bottom:2px;">E-posta</div><a href="mailto:info@optade.com" style="color:var(--accent-blue-light);font-size:0.92rem;">info@optade.com</a></div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">📍</div>
+          <div><div style="font-size:0.8rem;color:var(--text-muted);margin-bottom:2px;">Adres</div><div style="font-size:0.88rem;">Yıldız Teknopark, Beşiktaş, İstanbul</div></div>
+        </div>
+        <div style="margin-top:28px;padding-top:24px;border-top:1px solid var(--border);">
+          <h4 style="margin-bottom:6px;font-size:0.95rem;">Demo Sürecinde Neler Olur?</h4>
+          <div class="process-list">
+            <div class="process-item"><div class="pnum">1</div><p style="font-size:0.85rem;">24 saat içinde ekibimiz sizi arar</p></div>
+            <div class="process-item"><div class="pnum">2</div><p style="font-size:0.85rem;">30 dk keşif görüşmesinde operasyonunuzu anlıyoruz</p></div>
+            <div class="process-item"><div class="pnum">3</div><p style="font-size:0.85rem;">Size özel çözüm yol haritası sunuyoruz</p></div>
+            <div class="process-item"><div class="pnum">4</div><p style="font-size:0.85rem;">Ücretsiz ön analiz raporu hazırlıyoruz</p></div>
+          </div>
+        </div>
+        <div style="margin-top:24px;background:var(--bg-card);border-radius:10px;padding:20px;border:1px solid var(--border);">
+          <p style="font-size:0.85rem;font-style:italic;line-height:1.8;color:var(--text-secondary);">"Demo görüşmesinden sonra 2 hafta içinde pilot çalışmamızı başlattık."</p>
+          <div style="margin-top:10px;font-size:0.8rem;font-weight:600;">B2 Cargo — Operasyon Müdürü</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" style="margin-top:0;">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="../index.html" class="nav-logo" style="font-size:1.3rem;"><div class="logo-icon">⚡</div>Optade</a><p>Operasyonel süreçler için yapay zeka, optimizasyon ve yazılım çözümleri.</p><div class="footer-social"><a href="#" class="social-icon">in</a><a href="#" class="social-icon">ig</a></div></div>
+      <div class="footer-col"><h4>Çözümler</h4><ul><li><a href="rota-optimizasyonu.html">Rota Optimizasyonu</a></li><li><a href="surec-analizi.html">Süreç Analizi</a></li></ul></div>
+      <div class="footer-col"><h4>Şirket</h4><ul><li><a href="hakkimizda.html">Hakkımızda</a></li><li><a href="basari-hikayeleri.html">Başarı Hikayeleri</a></li></ul></div>
+      <div class="footer-col"><h4>İletişim</h4><ul><li><a href="iletisim.html">Demo Talebi</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 Optade Teknoloji A.Ş.</span><span>Yıldız Teknopark, İstanbul</span></div>
+  </div>
+</footer>
+<script>function handleSubmit(e){e.preventDefault();const b=e.target.querySelector('button[type="submit"]');b.textContent='✓ Talebiniz alındı!';b.style.background='linear-gradient(135deg,#22c55e,#16a34a)';b.disabled=true;}</script>
+<script src="../js/main.js"></script>
+</body>
+</html>

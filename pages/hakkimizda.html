@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hakkımızda | Optade – Lojistik Danışmanlık İstanbul</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* ── HAKKIMIZDA HERO: Merkezi büyük logo + yetenekler grid ── */
+    .hk-hero {
+      padding: 140px 0 80px;
+      background: radial-gradient(ellipse at 50% 0%, rgba(74,158,202,0.08) 0%, transparent 60%),
+                  linear-gradient(180deg, #0d1117 0%, #111827 100%);
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .hk-hero-text { max-width: 680px; margin: 0 auto 56px; position: relative; z-index: 1; }
+    .hk-brand { display:inline-flex; align-items:center; gap:12px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:100px; padding:10px 20px 10px 12px; margin-bottom:28px; }
+    .hk-logo-big { width:48px; height:48px; background:var(--gradient-mixed); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.4rem; }
+    .hk-brand-name { font-size:1.1rem; font-weight:800; }
+    .hk-brand-sub { font-size:0.78rem; color:var(--text-muted); }
+    .hk-skills { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; position:relative; z-index:1; }
+    .hk-skill { background:rgba(255,255,255,0.03); border-radius:10px; padding:20px 16px; text-align:center; transition:all 0.2s; }
+    .hk-skill:hover { background:rgba(74,158,202,0.08); border-color:rgba(74,158,202,0.2); }
+    .hk-skill-icon { font-size:1.6rem; margin-bottom:10px; }
+    .hk-skill-name { font-size:0.82rem; font-weight:600; color:var(--text-secondary); }
+    .hk-skill.blue { border:1px solid rgba(74,158,202,0.15); }
+    .hk-skill.green { border:1px solid rgba(124,154,94,0.15); }
+    @media(max-width:768px){.hk-skills{grid-template-columns:repeat(2,1fr);}}
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><div class="logo-icon">⚡</div>Optade</a>
+    <ul class="nav-links">
+      <li><a href="rota-optimizasyonu.html">Rota Optimizasyonu</a></li>
+      <li><a href="surec-analizi.html">Süreç Analizi</a></li>
+      <li><a href="sektorler.html">Sektörler</a></li>
+      <li><a href="basari-hikayeleri.html">Başarı Hikayeleri</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="hakkimizda.html" class="active">Hakkımızda</a></li>
+    </ul>
+    <div class="nav-cta"><a href="iletisim.html" class="btn btn-primary btn-sm">Ücretsiz Demo</a></div>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-nav">
+  <a href="rota-optimizasyonu.html">Rota Optimizasyonu</a><a href="surec-analizi.html">Süreç Analizi</a>
+  <a href="sektorler.html">Sektörler</a><a href="basari-hikayeleri.html">Başarı Hikayeleri</a>
+  <a href="blog.html">Blog</a><a href="hakkimizda.html">Hakkımızda</a>
+  <a href="iletisim.html" class="btn btn-primary" style="margin-top:8px;">Ücretsiz Demo</a>
+</div>
+
+<section class="hk-hero">
+  <div class="container">
+    <div class="hk-hero-text">
+      <div class="breadcrumb" style="justify-content:center;"><a href="../index.html">Ana Sayfa</a> / <span>Hakkımızda</span></div>
+      <div class="hk-brand" style="margin-top:16px;">
+        <div class="hk-logo-big">⚡</div>
+        <div style="text-align:left;"><div class="hk-brand-name">Optade</div><div class="hk-brand-sub">Yıldız Teknopark, İstanbul</div></div>
+      </div>
+      <h1 style="margin:0 0 16px;font-size:clamp(2rem,4vw,3rem);">Endüstri Mühendisliği + <span style="background:var(--gradient-mixed);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Yapay Zeka</span> + Yazılım</h1>
+      <p>9 kişilik uzman ekibimizle işletmelerin operasyonel süreçlerini daha verimli, ölçülebilir ve akıllı hale getiren uçtan uca teknoloji çözümleri geliştiriyoruz.</p>
+    </div>
+    <div class="hk-skills">
+      <div class="hk-skill blue"><div class="hk-skill-icon">📐</div><div class="hk-skill-name">Yöneylem Araştırması</div></div>
+      <div class="hk-skill green"><div class="hk-skill-icon">🗺️</div><div class="hk-skill-name">Rota Optimizasyonu</div></div>
+      <div class="hk-skill blue"><div class="hk-skill-icon">⚙️</div><div class="hk-skill-name">Algoritma Geliştirme</div></div>
+      <div class="hk-skill green"><div class="hk-skill-icon">👁️</div><div class="hk-skill-name">Görüntü İşleme</div></div>
+      <div class="hk-skill green"><div class="hk-skill-icon">📊</div><div class="hk-skill-name">Veri Analitiği</div></div>
+      <div class="hk-skill blue"><div class="hk-skill-icon">🧠</div><div class="hk-skill-name">Karar Destek</div></div>
+      <div class="hk-skill green"><div class="hk-skill-icon">📱</div><div class="hk-skill-name">Web & Mobil</div></div>
+      <div class="hk-skill blue"><div class="hk-skill-icon">🔗</div><div class="hk-skill-name">Kurumsal Entegrasyon</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section">
+  <div class="container">
+    <div class="split-section">
+      <div>
+        <div class="section-label green">Kim Biz?</div>
+        <h2 style="margin-bottom:16px;">Sahadan Gelen, Sahaya Dönen Çözümler</h2>
+        <p style="margin-bottom:14px;">Optade, Yıldız Teknopark bünyesinde faaliyet gösteren bir teknoloji ve yazılım firmasıdır. Endüstri mühendisleri, yazılım geliştiriciler, yapay zeka ve algoritma uzmanlarından oluşan 9 kişilik uzman ekibiyle hizmet vermektedir.</p>
+        <p style="margin-bottom:14px;">İşletmelerin sistemlerini analiz eder, süreçlerdeki problemleri tespit eder, optimizasyon çalışmaları yürütür ve bu çözümleri kullanıcı dostu web ile mobil yazılımlara dönüştürürüz.</p>
+        <p>Teorik değil; gerçek saha verileriyle test edilmiş, uygulanabilir ve sürdürülebilir çözümler üretiyoruz.</p>
+      </div>
+      <div class="highlight-box">
+        <h3 style="margin-bottom:20px;">Neden Yıldız Teknopark?</h3>
+        <div class="feature-list">
+          <div class="feature-item"><div class="feature-icon">✓</div><p>Ar-Ge destekli proje geliştirme altyapısı</p></div>
+          <div class="feature-item"><div class="feature-icon">✓</div><p>İstanbul merkezli, Türkiye geneli operasyon</p></div>
+          <div class="feature-item"><div class="feature-icon">✓</div><p>Akademi-sanayi iş birliği imkânları</p></div>
+          <div class="feature-item"><div class="feature-icon">✓</div><p>Teknoloji ekosistemiyle güçlü ağ</p></div>
+        </div>
+        <div style="margin-top:28px;padding-top:24px;border-top:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr;gap:16px;text-align:center;">
+          <div><div style="font-size:2rem;font-weight:800;color:var(--accent-blue-light)">9+</div><div style="font-size:0.78rem;color:var(--text-muted)">Uzman Ekip</div></div>
+          <div><div style="font-size:2rem;font-weight:800;color:var(--accent-green-light)">3+</div><div style="font-size:0.78rem;color:var(--text-muted)">Sektör Partneri</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="section" style="background:var(--bg-secondary);">
+  <div class="container">
+    <div class="section-header text-center">
+      <div class="section-label">Değerlerimiz</div>
+      <h2 class="section-title">Çalışma Felsefemiz</h2>
+    </div>
+    <div class="grid-3">
+      <div class="card green-hover" style="text-align:center;"><div class="card-icon green" style="margin:0 auto 20px;">🎯</div><h3 style="margin-bottom:10px;">Saha Odaklılık</h3><p>Her proje gerçek saha verilerine dayanır. Teorik modeller sahada test edilmeden teslim edilmez.</p></div>
+      <div class="card" style="text-align:center;"><div class="card-icon" style="margin:0 auto 20px;">🔬</div><h3 style="margin-bottom:10px;">Bilimsel Yaklaşım</h3><p>Yöneylem araştırması, veri analitiği ve optimizasyon algoritmaları her çözümün temelini oluşturur.</p></div>
+      <div class="card green-hover" style="text-align:center;"><div class="card-icon green" style="margin:0 auto 20px;">🤝</div><h3 style="margin-bottom:10px;">Uzun Vadeli Partnerlik</h3><p>Projeden sonra da yanınızdayız. Sürekli iyileştirme ve destekle çözümün yaşamaya devam etmesini sağlıyoruz.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:linear-gradient(145deg,#0d1117,#111827,#0d1117);border-top:1px solid rgba(74,158,202,0.12);text-align:center;padding:80px 0;">
+  <div class="container">
+    <div class="section-label">Birlikte Çalışalım</div>
+    <h2 style="margin-bottom:12px;">Operasyonunuz İçin En Doğru Çözümü Bulalım</h2>
+    <p style="max-width:460px;margin:0 auto 36px;">Ekibimizle tanışın, operasyonunuzu konuşalım.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="iletisim.html" class="btn btn-primary btn-lg">İletişime Geçin</a>
+      <a href="basari-hikayeleri.html" class="btn btn-secondary btn-lg">Referanslarımız</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="../index.html" class="nav-logo" style="font-size:1.3rem;"><div class="logo-icon">⚡</div>Optade</a><p>Operasyonel süreçler için yapay zeka, optimizasyon ve yazılım çözümleri.</p><div class="footer-social"><a href="#" class="social-icon">in</a><a href="#" class="social-icon">ig</a></div></div>
+      <div class="footer-col"><h4>Çözümler</h4><ul><li><a href="rota-optimizasyonu.html">Rota Optimizasyonu</a></li><li><a href="surec-analizi.html">Süreç Analizi</a></li></ul></div>
+      <div class="footer-col"><h4>Şirket</h4><ul><li><a href="hakkimizda.html">Hakkımızda</a></li><li><a href="basari-hikayeleri.html">Başarı Hikayeleri</a></li></ul></div>
+      <div class="footer-col"><h4>İletişim</h4><ul><li><a href="iletisim.html">Demo Talebi</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 Optade Teknoloji A.Ş.</span><span>Yıldız Teknopark, İstanbul</span></div>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

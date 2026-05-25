@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rota Optimizasyonu Yazılımı Türkiye | Optade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* ── ROTA SAYFASI HERO: Mavi harita temalı, sol metin + sağ büyük ikon grid ── */
+    .page-hero {
+      padding: 140px 0 80px;
+      background: linear-gradient(135deg, #080e1a 0%, #0d1a2e 60%, #0a1f1a 100%);
+      position: relative; overflow: hidden;
+    }
+    .hero-map-bg {
+      position: absolute; inset: 0;
+      background-image:
+        radial-gradient(circle at 70% 50%, rgba(74,158,202,0.12) 0%, transparent 50%),
+        linear-gradient(rgba(74,158,202,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(74,158,202,0.03) 1px, transparent 1px);
+      background-size: auto, 40px 40px, 40px 40px;
+    }
+    .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; position: relative; z-index: 1; }
+    .hero-stats-row { display: flex; gap: 24px; margin-top: 40px; flex-wrap: wrap; }
+    .hstat { background: rgba(74,158,202,0.08); border: 1px solid rgba(74,158,202,0.2); border-radius: 10px; padding: 16px 20px; text-align: center; }
+    .hstat .v { font-size: 1.6rem; font-weight: 800; color: var(--accent-blue-light); display: block; }
+    .hstat .l { font-size: 0.72rem; color: var(--text-muted); }
+    /* Route visual */
+    .route-visual { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .route-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(74,158,202,0.15); border-radius: 12px; padding: 20px; }
+    .route-card-title { font-size: 0.8rem; font-weight: 700; color: var(--accent-blue-light); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .route-bar-wrap { display: flex; flex-direction: column; gap: 6px; }
+    .route-bar { height: 6px; background: rgba(255,255,255,0.06); border-radius: 3px; overflow: hidden; }
+    .route-bar-fill { height: 100%; border-radius: 3px; }
+    @media(max-width:768px){.hero-inner{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><div class="logo-icon">⚡</div>Optade</a>
+    <ul class="nav-links">
+      <li><a href="rota-optimizasyonu.html" class="active">Rota Optimizasyonu</a></li>
+      <li><a href="surec-analizi.html">Süreç Analizi</a></li>
+      <li><a href="sektorler.html">Sektörler</a></li>
+      <li><a href="basari-hikayeleri.html">Başarı Hikayeleri</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="hakkimizda.html">Hakkımızda</a></li>
+    </ul>
+    <div class="nav-cta"><a href="iletisim.html" class="btn btn-primary btn-sm">Ücretsiz Demo</a></div>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-nav">
+  <a href="rota-optimizasyonu.html">Rota Optimizasyonu</a><a href="surec-analizi.html">Süreç Analizi</a>
+  <a href="sektorler.html">Sektörler</a><a href="basari-hikayeleri.html">Başarı Hikayeleri</a>
+  <a href="blog.html">Blog</a><a href="hakkimizda.html">Hakkımızda</a>
+  <a href="iletisim.html" class="btn btn-primary" style="margin-top:8px;">Ücretsiz Demo</a>
+</div>
+
+<section class="page-hero">
+  <div class="hero-map-bg"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="breadcrumb"><a href="../index.html">Ana Sayfa</a> / <span>Rota Optimizasyonu</span></div>
+        <div class="section-label" style="margin-top:8px;">Rota Optimizasyonu Yazılımı</div>
+        <h1 style="margin-bottom:16px;font-size:clamp(1.8rem,3.5vw,3rem);">Lojistik Maliyetlerinizi <span style="color:var(--accent-blue-light)">%25 Azaltın</span></h1>
+        <p style="max-width:480px;margin-bottom:32px;">Teslimat, kurye ve toplama rotalarını yapay zeka ile optimize edin. B2 Cargo ve CargoX ile kanıtlanmış gerçek saha çözümleri.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="iletisim.html" class="btn btn-primary btn-lg">Demo Talep Et</a>
+          <a href="basari-hikayeleri.html" class="btn btn-secondary btn-lg">Referansları Gör</a>
+        </div>
+        <div class="hero-stats-row">
+          <div class="hstat"><span class="v">%25</span><span class="l">Maliyet Tasarrufu</span></div>
+          <div class="hstat"><span class="v">%30</span><span class="l">Hız Artışı</span></div>
+          <div class="hstat"><span class="v">115</span><span class="l">Optimize Şube</span></div>
+        </div>
+      </div>
+      <div class="route-visual">
+        <div class="route-card" style="grid-column:1/-1;">
+          <div class="route-card-title">Günlük Rota Performansı</div>
+          <div class="route-bar-wrap">
+            <div style="display:flex;justify-content:space-between;font-size:0.72rem;color:var(--text-muted);margin-bottom:4px;"><span>Teslimat Tamamlama</span><span style="color:var(--accent-blue-light)">%98</span></div>
+            <div class="route-bar"><div class="route-bar-fill" style="width:98%;background:linear-gradient(90deg,#4a9eca,#7bbfe0)"></div></div>
+            <div style="display:flex;justify-content:space-between;font-size:0.72rem;color:var(--text-muted);margin-bottom:4px;margin-top:8px;"><span>Araç Kapasitesi</span><span style="color:var(--accent-green-light)">%87</span></div>
+            <div class="route-bar"><div class="route-bar-fill" style="width:87%;background:linear-gradient(90deg,#7c9a5e,#a3bf7e)"></div></div>
+            <div style="display:flex;justify-content:space-between;font-size:0.72rem;color:var(--text-muted);margin-bottom:4px;margin-top:8px;"><span>Zamanında Teslimat</span><span style="color:var(--accent-blue-light)">%94</span></div>
+            <div class="route-bar"><div class="route-bar-fill" style="width:94%;background:linear-gradient(90deg,#4a9eca,#7bbfe0)"></div></div>
+          </div>
+        </div>
+        <div class="route-card">
+          <div class="route-card-title">Aktif Araç</div>
+          <div style="font-size:2rem;font-weight:800;color:var(--accent-blue-light);">51</div>
+          <div style="font-size:0.72rem;color:var(--text-muted);margin-top:4px;">sahada</div>
+        </div>
+        <div class="route-card">
+          <div class="route-card-title">Toplam Rota</div>
+          <div style="font-size:2rem;font-weight:800;color:var(--accent-green-light);">36</div>
+          <div style="font-size:0.72rem;color:var(--text-muted);margin-top:4px;">optimize edildi</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-band">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item"><span class="num">%25</span><span class="label">Yakıt & Maliyet Tasarrufu</span></div>
+      <div class="stat-item"><span class="num">%30</span><span class="label">Daha Hızlı Teslimat</span></div>
+      <div class="stat-item"><span class="num">%100</span><span class="label">Saha Doğrulaması</span></div>
+      <div class="stat-item"><span class="num">%10</span><span class="label">Araç Kapasitesi Artışı</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTIONS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header text-center">
+      <div class="section-label">Rota Çözümleri</div>
+      <h2 class="section-title">Her Operasyon Tipi İçin Özel Rota Optimizasyonu</h2>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-icon">🚛</div>
+        <h3>Teslimat Rota Optimizasyonu</h3>
+        <p>Binlerce teslimat noktasını mevcut araç filonuza en verimli şekilde atayarak rota planları oluşturuyoruz.</p>
+        <div class="feature-list" style="margin-top:16px;">
+          <div class="feature-item"><div class="feature-icon">✓</div><p>Çoklu araç ve şube desteği</p></div>
+          <div class="feature-item"><div class="feature-icon">✓</div><p>Zaman penceresi optimizasyonu</p></div>
+          <div class="feature-item"><div class="feature-icon">✓</div><p>Gerçek zamanlı trafik entegrasyonu</p></div>
+        </div>
+      </div>
+      <div class="card green-hover">
+        <div class="card-icon green">🏍️</div>
+        <h3>Kurye Rotalama</h3>
+        <p>Şube bazlı kurye dağılımını optimize ederek teslimat sürelerini kısaltıyor ve verimliliği artırıyoruz.</p>
+        <div class="feature-list" style="margin-top:16px;">
+          <div class="feature-item"><div class="feature-icon green">✓</div><p>Şube bazlı atama optimizasyonu</p></div>
+          <div class="feature-item"><div class="feature-icon green">✓</div><p>Anlık kurye takip entegrasyonu</p></div>
+          <div class="feature-item"><div class="feature-icon green">✓</div><p>Yoğunluk bazlı dinamik rota</p></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-icon">📦</div>
+        <h3>Toplama Rotalama</h3>
+        <p>Müşterilerden alınacak gönderilerin en uygun sıra ve araç planlamasıyla toplanmasını sağlıyoruz.</p>
+        <div class="feature-list" style="margin-top:16px;">
+          <div class="feature-item"><div class="feature-icon">✓</div><p>Aktarma merkezi optimizasyonu</p></div>
+          <div class="feature-item"><div class="feature-icon">✓</div><p>Coğrafi kümeleme algoritması</p></div>
+          <div class="feature-item"><div class="feature-icon">✓</div><p>Gelişmiş geocoding altyapısı</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="section" style="background:var(--bg-secondary);">
+  <div class="container">
+    <div class="section-header text-center">
+      <div class="section-label green">Öncesi & Sonrası</div>
+      <h2 class="section-title">Rota Optimizasyonu Sonrası Fark</h2>
+    </div>
+    <div class="grid-2">
+      <div class="card" style="border-color:rgba(239,68,68,0.2);">
+        <h3 style="color:#ef4444;margin-bottom:16px;">❌ Optimizasyon Öncesi</h3>
+        <div class="feature-list">
+          <div class="feature-item"><div class="feature-icon" style="background:rgba(239,68,68,0.1);color:#ef4444;">✗</div><p>Sürücülerin kendi kararıyla belirlenen rotalar</p></div>
+          <div class="feature-item"><div class="feature-icon" style="background:rgba(239,68,68,0.1);color:#ef4444;">✗</div><p>Yüksek yakıt tüketimi ve gereksiz mesafe</p></div>
+          <div class="feature-item"><div class="feature-icon" style="background:rgba(239,68,68,0.1);color:#ef4444;">✗</div><p>Gecikmeli teslimatlar ve müşteri şikayetleri</p></div>
+          <div class="feature-item"><div class="feature-icon" style="background:rgba(239,68,68,0.1);color:#ef4444;">✗</div><p>Araç kapasitesinin verimsiz kullanımı</p></div>
+        </div>
+      </div>
+      <div class="card" style="border-color:rgba(74,158,202,0.3);">
+        <h3 style="color:var(--accent-blue-light);margin-bottom:16px;">✓ Optade ile Sonrası</h3>
+        <div class="feature-list">
+          <div class="feature-item"><div class="feature-icon">✓</div><p>Algoritmik olarak optimize edilmiş rotalar</p></div>
+          <div class="feature-item"><div class="feature-icon">✓</div><p>%25'e varan yakıt ve operasyon tasarrufu</p></div>
+          <div class="feature-item"><div class="feature-icon">✓</div><p>Zamanında teslimat oranında belirgin artış</p></div>
+          <div class="feature-item"><div class="feature-icon">✓</div><p>Araç kapasitesinde %10 iyileşme</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="background:linear-gradient(135deg,#080e1a,#0d1a2e,#080e1a);border-top:1px solid rgba(74,158,202,0.15);text-align:center;padding:80px 0;">
+  <div class="container">
+    <div class="section-label">Hemen Başlayın</div>
+    <h2 style="margin-bottom:16px;">Lojistik Maliyetlerinizi Düşürelim</h2>
+    <p style="max-width:460px;margin:0 auto 36px;">Gerçek saha verilerinizle ücretsiz analiz yapıp optimizasyon potansiyelini gösterelim.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="iletisim.html" class="btn btn-primary btn-lg">Ücretsiz Analiz Talebi</a>
+      <a href="basari-hikayeleri.html" class="btn btn-secondary btn-lg">Başarı Hikayelerini Gör</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="../index.html" class="nav-logo" style="font-size:1.3rem;"><div class="logo-icon">⚡</div>Optade</a><p>Operasyonel süreçler için yapay zeka, optimizasyon ve yazılım çözümleri.</p><div class="footer-social"><a href="#" class="social-icon">in</a><a href="#" class="social-icon">ig</a></div></div>
+      <div class="footer-col"><h4>Çözümler</h4><ul><li><a href="rota-optimizasyonu.html">Rota Optimizasyonu</a></li><li><a href="surec-analizi.html">Süreç Analizi</a></li></ul></div>
+      <div class="footer-col"><h4>Şirket</h4><ul><li><a href="hakkimizda.html">Hakkımızda</a></li><li><a href="basari-hikayeleri.html">Başarı Hikayeleri</a></li></ul></div>
+      <div class="footer-col"><h4>İletişim</h4><ul><li><a href="iletisim.html">Demo Talebi</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 Optade Teknoloji A.Ş.</span><span>Yıldız Teknopark, İstanbul</span></div>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Optade | Lojistik Optimizasyon Yazılımı</title>
+  <meta name="description" content="Optade, lojistik optimizasyon yazılımı ile rota planlama, kurye rotalama ve operasyonel verimlilik çözümleri sunar.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── ANA SAYFA HERO: Koyu + mavi ışık efekti ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      background: #0d1117;
+      position: relative; overflow: hidden; padding-top: 72px;
+    }
+    .hero-glow-blue {
+      position: absolute; top: -100px; right: -100px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(74,158,202,0.15) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-glow-green {
+      position: absolute; bottom: -100px; left: -50px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(124,154,94,0.08) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-grid-lines {
+      position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(74,158,202,0.04) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(74,158,202,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+    .hero-content {
+      max-width: 1200px; margin: 0 auto; padding: 80px 24px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+      position: relative; z-index: 1;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(74,158,202,0.1); border: 1px solid rgba(74,158,202,0.25);
+      border-radius: 100px; padding: 6px 16px 6px 8px;
+      font-size: 0.8rem; font-weight: 500; color: var(--accent-blue-light); margin-bottom: 28px;
+    }
+    .hero-badge .dot { width: 6px; height: 6px; background: var(--accent-blue); border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+    .hero h1 {
+      margin-bottom: 20px; font-size: clamp(2.2rem,4.5vw,3.8rem); font-weight: 900;
+      background: linear-gradient(135deg, #e8eaf0 30%, #7bbfe0 70%, #a3bf7e 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .hero p { font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 40px; max-width: 500px; }
+    .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+    .hero-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 48px; }
+    .hero-stat {
+      text-align: center; padding: 18px 12px;
+      background: rgba(255,255,255,0.03); border: 1px solid rgba(74,158,202,0.15);
+      border-radius: var(--radius);
+    }
+    .hero-stat .num { font-size: 1.8rem; font-weight: 800; color: var(--accent-blue-light); display: block; }
+    .hero-stat .lbl { font-size: 0.72rem; color: var(--text-muted); margin-top: 3px; }
+    /* Mockup */
+    .hero-mockup {
+      background: var(--bg-card); border: 1px solid rgba(74,158,202,0.2);
+      border-radius: 16px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(74,158,202,0.1);
+    }
+    .mockup-topbar {
+      background: var(--bg-secondary); padding: 12px 18px;
+      display: flex; align-items: center; gap: 8px; border-bottom: 1px solid var(--border);
+    }
+    .mdot { width: 10px; height: 10px; border-radius: 50%; }
+    .mockup-body { padding: 20px; }
+    .kpi-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; margin-bottom: 16px; }
+    .kpi-box { background: var(--bg-secondary); border-radius: 8px; padding: 12px; text-align: center; }
+    .kpi-box .val { font-size: 1.2rem; font-weight: 700; color: var(--accent-blue-light); }
+    .kpi-box .lbl { font-size: 0.65rem; color: var(--text-muted); margin-top: 2px; }
+    .chart-area {
+      height: 120px; background: linear-gradient(180deg, rgba(74,158,202,0.08) 0%, transparent 100%);
+      border-radius: 8px; display: flex; align-items: flex-end; gap: 5px; padding: 10px;
+      position: relative; margin-bottom: 12px;
+    }
+    .cbar { border-radius: 4px 4px 0 0; opacity: 0.85; }
+    .cbar.blue { background: linear-gradient(180deg, #4a9eca, #2d7aad); }
+    .cbar.green { background: linear-gradient(180deg, #7c9a5e, #5a7344); }
+    .map-mini {
+      height: 90px; background: #1a2535; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; color: var(--text-muted); position: relative; overflow: hidden;
+    }
+    .map-route {
+      position: absolute; top: 30%; left: 10%; right: 10%;
+      height: 2px; background: linear-gradient(90deg, #4a9eca, #7c9a5e);
+      border-radius: 2px;
+    }
+    .map-dot { position: absolute; width: 8px; height: 8px; border-radius: 50%; background: #4a9eca; }
+    @media(max-width:768px){
+      .hero-content{grid-template-columns:1fr;gap:40px;padding:60px 24px;}
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><div class="logo-icon">⚡</div>Optade</a>
+    <ul class="nav-links">
+      <li><a href="pages/rota-optimizasyonu.html">Rota Optimizasyonu</a></li>
+      <li><a href="pages/surec-analizi.html">Süreç Analizi</a></li>
+      <li><a href="pages/sektorler.html">Sektörler</a></li>
+      <li><a href="pages/basari-hikayeleri.html">Başarı Hikayeleri</a></li>
+      <li><a href="pages/blog.html">Blog</a></li>
+      <li><a href="pages/hakkimizda.html">Hakkımızda</a></li>
+    </ul>
+    <div class="nav-cta"><a href="pages/iletisim.html" class="btn btn-primary btn-sm">Ücretsiz Demo</a></div>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-nav">
+  <a href="pages/rota-optimizasyonu.html">Rota Optimizasyonu</a>
+  <a href="pages/surec-analizi.html">Süreç Analizi</a>
+  <a href="pages/sektorler.html">Sektörler</a>
+  <a href="pages/basari-hikayeleri.html">Başarı Hikayeleri</a>
+  <a href="pages/blog.html">Blog</a>
+  <a href="pages/hakkimizda.html">Hakkımızda</a>
+  <a href="pages/iletisim.html" class="btn btn-primary" style="margin-top:8px;">Ücretsiz Demo</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow-blue"></div>
+  <div class="hero-glow-green"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-content">
+    <div>
+      <div class="hero-badge"><span class="dot"></span>Yıldız Teknopark Bünyesinde</div>
+      <h1>Lojistik Optimizasyon Yazılımı ile Operasyonlarınızı Dönüştürün</h1>
+      <p>Endüstri mühendisliği, yapay zeka ve yazılım teknolojilerini bir araya getirerek operasyonel süreçlerinizi ölçülebilir biçimde iyileştiriyoruz.</p>
+      <div class="hero-btns">
+        <a href="pages/iletisim.html" class="btn btn-primary btn-lg">Ücretsiz Demo Talebi</a>
+        <a href="pages/hakkimizda.html" class="btn btn-secondary btn-lg">Bizi Tanıyın</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><span class="num">%25</span><span class="lbl">Maliyet Azalması</span></div>
+        <div class="hero-stat"><span class="num">%30</span><span class="lbl">Hız Artışı</span></div>
+        <div class="hero-stat"><span class="num">9+</span><span class="lbl">Uzman Ekip</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="hero-mockup">
+        <div class="mockup-topbar">
+          <div class="mdot" style="background:#ef4444"></div>
+          <div class="mdot" style="background:#f59e0b"></div>
+          <div class="mdot" style="background:#22c55e"></div>
+          <span style="margin-left:10px;font-size:0.72rem;color:var(--text-muted)">Optade — Lojistik Paneli</span>
+        </div>
+        <div class="mockup-body">
+          <div class="kpi-row">
+            <div class="kpi-box"><div class="val">6.977</div><div class="lbl">Kurye Tespit</div></div>
+            <div class="kpi-box"><div class="val">115</div><div class="lbl">Şube</div></div>
+            <div class="kpi-box"><div class="val" style="color:var(--accent-green-light)">%100</div><div class="lbl">Konum</div></div>
+          </div>
+          <div class="chart-area">
+            <div class="cbar blue" style="flex:1;height:35%"></div>
+            <div class="cbar blue" style="flex:1;height:55%"></div>
+            <div class="cbar green" style="flex:1;height:45%"></div>
+            <div class="cbar blue" style="flex:1;height:75%"></div>
+            <div class="cbar green" style="flex:1;height:65%"></div>
+            <div class="cbar blue" style="flex:1;height:88%"></div>
+            <div class="cbar green" style="flex:1;height:80%"></div>
+          </div>
+          <div class="map-mini">
+            <div class="map-route"></div>
+            <div class="map-dot" style="left:10%;top:40%"></div>
+            <div class="map-dot" style="left:40%;top:30%;background:#7c9a5e"></div>
+            <div class="map-dot" style="right:12%;top:50%"></div>
+            <span style="position:relative;z-index:1;">Rota Görünümü</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGOS -->
+<section style="padding:40px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg-secondary);overflow:hidden;">
+  <div class="container">
+    <p style="text-align:center;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:28px;">Güvenilen Markalar</p>
+    <div style="display:flex;gap:32px;justify-content:center;flex-wrap:wrap;">
+      <div style="padding:10px 28px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;font-weight:700;color:var(--text-muted)">B2 Cargo</div>
+      <div style="padding:10px 28px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;font-weight:700;color:var(--text-muted)">CargoX</div>
+      <div style="padding:10px 28px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;font-weight:700;color:var(--text-muted)">Başgimpa</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section">
+  <div class="container">
+    <div class="section-header text-center">
+      <div class="section-label">Çözümlerimiz</div>
+      <h2 class="section-title">Operasyonunuzun Her Adımı İçin Teknoloji</h2>
+      <p class="section-desc">Sahada çalışan çözümler üretiyoruz. Her proje firmanızın gerçek verileri ve dinamiklerine göre özelleştirilir.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card green-hover">
+        <div class="card-icon green">🗺️</div>
+        <h3>Rota Optimizasyonu</h3>
+        <p>Teslimat noktalarını en uygun araçlara atayarak minimum mesafe, maksimum verimlilikle rota planları oluşturuyoruz.</p>
+        <a href="pages/rota-optimizasyonu.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--accent-green);font-size:0.85rem;font-weight:600;margin-top:20px;">Detaylı Bilgi →</a>
+      </div>
+      <div class="card">
+        <div class="card-icon">📊</div>
+        <h3>Süreç Analizi & İyileştirme</h3>
+        <p>Operasyonel verilerinizi inceleyerek darboğazları tespit eder, ölçülebilir iyileştirme modelleri tasarlarız.</p>
+        <a href="pages/surec-analizi.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--accent-blue);font-size:0.85rem;font-weight:600;margin-top:20px;">Detaylı Bilgi →</a>
+      </div>
+      <div class="card green-hover">
+        <div class="card-icon green">📱</div>
+        <h3>Web & Mobil Yazılım</h3>
+        <p>Saha operasyonlarınız için kullanıcı dostu web ve mobil uygulamalar geliştiriyor, lojistik yönetim panelleri sunuyoruz.</p>
+        <a href="pages/sektorler.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--accent-green);font-size:0.85rem;font-weight:600;margin-top:20px;">Detaylı Bilgi →</a>
+      </div>
+      <div class="card">
+        <div class="card-icon">🚚</div>
+        <h3>Kurye Rotalama</h3>
+        <p>Şube bazlı kurye dağılımını optimize ederek teslimat sürelerini kısaltıyor, kurye verimliliğini artırıyoruz.</p>
+        <a href="pages/rota-optimizasyonu.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--accent-blue);font-size:0.85rem;font-weight:600;margin-top:20px;">Detaylı Bilgi →</a>
+      </div>
+      <div class="card green-hover">
+        <div class="card-icon green">👁️</div>
+        <h3>Bilgisayarlı Görü</h3>
+        <p>Kamera görüntüleri üzerinden nesne, insan ve davranış analizi yapan yapay zeka çözümleri geliştiriyoruz.</p>
+        <a href="pages/sektorler.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--accent-green);font-size:0.85rem;font-weight:600;margin-top:20px;">Detaylı Bilgi →</a>
+      </div>
+      <div class="card">
+        <div class="card-icon">💰</div>
+        <h3>Dinamik Fiyatlama</h3>
+        <p>Rakip fiyatları, talep ve bölgesel verilere göre yapay zeka destekli optimum satış fiyatları öneriyoruz.</p>
+        <a href="pages/surec-analizi.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--accent-blue);font-size:0.85rem;font-weight:600;margin-top:20px;">Detaylı Bilgi →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-band">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item"><span class="num">%25</span><span class="label">Operasyonel Maliyet Azalması</span></div>
+      <div class="stat-item"><span class="num">%30</span><span class="label">Teslimat Hızı Artışı</span></div>
+      <div class="stat-item"><span class="num">9+</span><span class="label">Uzman Ekip Üyesi</span></div>
+      <div class="stat-item"><span class="num">3+</span><span class="label">Aktif Sektör Partneri</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY OPTADE -->
+<section class="section" style="background:var(--bg-secondary);">
+  <div class="container">
+    <div class="split-section">
+      <div>
+        <div class="section-label green">Neden Optade?</div>
+        <h2 style="margin-bottom:16px;">Endüstri Mühendisliği + Yapay Zeka + Yazılım</h2>
+        <p style="margin-bottom:20px;">Optade, endüstri mühendisliği bakış açısını yapay zeka ve yazılım teknolojileriyle birleştirerek işletmelere karar destek sistemleri ve optimizasyon çözümleri sunar.</p>
+        <div class="feature-list">
+          <div class="feature-item"><div class="feature-icon green">✓</div><p><strong style="color:var(--text-primary)">Saha Odaklı:</strong> Gerçek saha verileriyle test edilmiş çözümler</p></div>
+          <div class="feature-item"><div class="feature-icon green">✓</div><p><strong style="color:var(--text-primary)">Firmaya Özel:</strong> Her işletmenin dinamiklerine göre özelleştirilmiş</p></div>
+          <div class="feature-item"><div class="feature-icon green">✓</div><p><strong style="color:var(--text-primary)">Ölçeklenebilir:</strong> Sürdürülebilir ve genişletilebilir uygulama teslimi</p></div>
+          <div class="feature-item"><div class="feature-icon green">✓</div><p><strong style="color:var(--text-primary)">Yıldız Teknopark:</strong> Ar-Ge destekli çözümler</p></div>
+        </div>
+        <a href="pages/hakkimizda.html" class="btn btn-green" style="margin-top:32px;">Ekibimizi Tanıyın</a>
+      </div>
+      <div class="highlight-box green">
+        <h3 style="margin-bottom:20px;">Teknolojik Yetkinlikler</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+          <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:14px;font-size:0.82rem;font-weight:600;">Yöneylem Araştırması</div>
+          <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:14px;font-size:0.82rem;font-weight:600;">Rota Optimizasyonu</div>
+          <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:14px;font-size:0.82rem;font-weight:600;">Algoritma Geliştirme</div>
+          <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:14px;font-size:0.82rem;font-weight:600;">Görüntü İşleme</div>
+          <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:14px;font-size:0.82rem;font-weight:600;">Veri Analitiği</div>
+          <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:14px;font-size:0.82rem;font-weight:600;">Karar Destek Sistemleri</div>
+          <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:14px;font-size:0.82rem;font-weight:600;">Web & Mobil Yazılım</div>
+          <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:14px;font-size:0.82rem;font-weight:600;">Kurumsal Entegrasyon</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header text-center">
+      <div class="section-label">Müşteri Görüşleri</div>
+      <h2 class="section-title">Sahadan Gerçek Sonuçlar</h2>
+    </div>
+    <div class="testimonials">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Optade'nin rota optimizasyon çözümü sayesinde kurye maliyetlerimizi ciddi ölçüde düşürdük. Sistem saha dinamiklerimize mükemmel uyum sağladı."</p>
+        <div class="testimonial-author"><div class="author-avatar">BC</div><div><div class="author-name">B2 Cargo</div><div class="author-role">Operasyon Direktörü</div></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Geocoding altyapısı ve kurye rotalama projemizde Optade ekibinin teknik derinliği bizi etkiledi. 115 şubemizde ölçülebilir fark yarattı."</p>
+        <div class="testimonial-author"><div class="author-avatar">CX</div><div><div class="author-name">CargoX</div><div class="author-role">Teknoloji Direktörü</div></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Dağıtım rotalama ve lojistik web paneli projemizde Optade beklentilerimizin ötesinde çözüm teslim etti. Operasyonel verimlilik artışı net görünüyor."</p>
+        <div class="testimonial-author"><div class="author-avatar">BG</div><div><div class="author-name">Başgimpa</div><div class="author-role">Genel Müdür</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="background:linear-gradient(135deg,#0a1628 0%,#0d1f1a 50%,#0a1628 100%);border-top:1px solid rgba(74,158,202,0.15);border-bottom:1px solid rgba(74,158,202,0.15);text-align:center;padding:96px 0;position:relative;overflow:hidden;">
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(74,158,202,0.08) 0%,transparent 65%);pointer-events:none;"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="section-label">Hemen Başlayın</div>
+    <h2 style="margin-bottom:16px;">Operasyonlarınızı Optimize Hale Getirelim</h2>
+    <p style="max-width:480px;margin:0 auto 40px;">Yapay zeka, optimizasyon ve yazılım teknolojileriyle işletmenize özel çözümler geliştirelim.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="pages/iletisim.html" class="btn btn-primary btn-lg">Ücretsiz Demo Talebi</a>
+      <a href="pages/basari-hikayeleri.html" class="btn btn-secondary btn-lg">Başarı Hikayelerini Gör</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="font-size:1.3rem;"><div class="logo-icon">⚡</div>Optade</a>
+        <p>Operasyonel süreçler için yapay zeka, optimizasyon ve yazılım çözümleri. Yıldız Teknopark bünyesinde.</p>
+        <div class="footer-social"><a href="#" class="social-icon">in</a><a href="#" class="social-icon">ig</a><a href="#" class="social-icon">tw</a></div>
+      </div>
+      <div class="footer-col"><h4>Çözümler</h4><ul>
+        <li><a href="pages/rota-optimizasyonu.html">Rota Optimizasyonu</a></li>
+        <li><a href="pages/rota-optimizasyonu.html">Kurye Rotalama</a></li>
+        <li><a href="pages/surec-analizi.html">Süreç Analizi</a></li>
+        <li><a href="pages/surec-analizi.html">Dinamik Fiyatlama</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Sektörler</h4><ul>
+        <li><a href="pages/sektorler.html">Lojistik & Kargo</a></li>
+        <li><a href="pages/sektorler.html">FMCG & Dağıtım</a></li>
+        <li><a href="pages/sektorler.html">Perakende</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Şirket</h4><ul>
+        <li><a href="pages/hakkimizda.html">Hakkımızda</a></li>
+        <li><a href="pages/basari-hikayeleri.html">Başarı Hikayeleri</a></li>
+        <li><a href="pages/blog.html">Blog</a></li>
+        <li><a href="pages/iletisim.html">Demo Talebi</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Optade Teknoloji A.Ş. Tüm hakları saklıdır.</span>
+      <span>Yıldız Teknopark, İstanbul</span>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
